@@ -1,29 +1,28 @@
 package LogicalProgram;
 import java.util.Scanner;
 public class Logicalprog {
-
-	public static void main(String[] args) {
 		
-		Scanner s = new Scanner(System.in);  
-	       System.out.print("Enter a number : ");  
-	       int n = s.nextInt();  
-	       if (isPrime(n)) {  
-	           System.out.println(n + " is a prime number");  
-	       } else {  
-	           System.out.println(n + " is not a prime number");  
-	       }  
-	   }  
-	  
-	   public static boolean isPrime(int n) {  
-	       if (n <= 1) {  
-	           return false;  
-	       }  
-	       for (int i = 2; i < Math.sqrt(n); i++) {  
-	           if (n % i == 0) {  
-	               return false;  
-	           }  
-	       }  
-	       return true;  
-	   }  
+		public static void reverseNumber(int number)   
+		{  
+		if (number < 10)   
+		{  
+		System.out.println(number);  
+		return;  
+		}  
+		else   
+		{  
+		System.out.print(number % 10);  
+		reverseNumber(number/10);  
+		}  
+		}  
+		public static void main(String args[])  
+		{  
+		System.out.print("Enter the number that you want to reverse: ");  
+		Scanner sc = new Scanner(System.in);  
+		int num = sc.nextInt();  
+		System.out.print("The reverse of the given number is: ");   
+		reverseNumber(num);  
+		}  
+	
 
 	}
