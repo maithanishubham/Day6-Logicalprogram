@@ -2,32 +2,23 @@ package LogicalProgram;
 import java.util.Scanner;
 public class Logicalprog {
 		
-	public static void main(String[] args) {
-		 Scanner scr = new Scanner(System.in);
-       System.out.println("Enter the number of coupons to be generated:");
-       int n = scr.nextInt();
+	 public static void main(String[] args) {
+         double startTime, stopTime;
+         	System.out.print("Enter 1 To Start");
+         	Scanner sc=new Scanner(System.in);
+         	sc.nextInt();
+         	
+         	startTime = System.currentTimeMillis();
+         	System.out.println("start time "+ startTime);
+         	System.out.println("Enter 2 To Stop");
+         	sc.nextInt();
+         	
+         	stopTime = System.currentTimeMillis();
+         	System.out.println("stop time "+ stopTime);
+        
+         	double timeElapsed =(stopTime-startTime)/1000;
+         	System.out.println("Total time elapsed in milliseconds: 1"+ timeElapsed);
+     }
+ }
 
 
-
-       char[] chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
-       int max = 100000000;
-
-       for (int i = 0; i < n; i++) {
-           int random = (int) (Math.random() * max);
-           StringBuilder sb = new StringBuilder();
-           while (random > 0) {
-               sb.append(chars[random % chars.length]);
-               random /= chars.length;
-
-           }
-
-           String couponCode = sb.toString();
-           System.out.println("Coupon Code: " + couponCode);
-       }
-
-
-   }
-
-
-
-}
